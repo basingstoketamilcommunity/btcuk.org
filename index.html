@@ -150,25 +150,49 @@
 
 <!-- Your JavaScript -->
 <script>
+document.addEventListener('DOMContentLoaded', () => {
   const trusteesContainer = document.getElementById('trusteesPreview');
 
   fetch('/data/content.json')
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
-      const trustees = data.trustees;
-      trustees.forEach(trustee => {
+      data.trustees.forEach(trustee => {
         const card = document.createElement('div');
-        card.className = "min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300";
-        card.innerHTML = `
-          <img src="${trustee.photo}" alt="${trustee.name}" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-          <h3 class="text-xl font-bold mb-2">${trustee.name}</h3>
-          <p class="text-sm">${trustee.role}</p>
+
+        // Updated classes with gradient bg, hover scale, shadow, and rounded corners
+        card.className = `
+          min-w-[250px] 
+          bg-gradient-to-br from-amber-200 via-amber-100 to-yellow-50 
+          rounded-3xl 
+          p-6 
+          shadow-lg 
+          text-center 
+          flex-shrink-0 
+          transform 
+          hover:scale-105 
+          hover:shadow-2xl 
+          hover:from-amber-300 
+          hover:to-yellow-100 
+          transition-all 
+          duration-300 
+          cursor-pointer
         `;
+
+        // Inner HTML with styled image and text
+        card.innerHTML = `
+          <img src="${trustee.photo}" alt="${trustee.name}" 
+               class="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-4 border-amber-300 shadow-md" />
+          <h3 class="text-xl font-bold mb-2 text-red-800">${trustee.name}</h3>
+          <p class="text-sm text-gray-700 mb-1">Role</p>
+          <p class="text-sm text-gray-800">${trustee.role}</p>
+        `;
+
         trusteesContainer.appendChild(card);
       });
     })
     .catch(err => console.error('Error loading trustees JSON:', err));
 
+  // Scroll arrows functionality
   const scrollContainer = document.getElementById('trusteesPreview');
   document.getElementById('scrollLeft').addEventListener('click', () => {
     scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
@@ -176,8 +200,8 @@
   document.getElementById('scrollRight').addEventListener('click', () => {
     scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
   });
+});
 </script>
-
   <!-- Footer / Contact -->
 <footer class="bg-red-900 text-amber-100 py-12" id="contact">
   <div class="container mx-auto px-6 text-center">
