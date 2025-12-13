@@ -1,7 +1,35 @@
 {
 "trustees": [
 {
+"name": "Bala",
+"photo": "assets/images/bala.jpg"
+}
+{
+"name": "Thankesh",
+"photo": "assets/images/thankesh.jpg"
+}
+{
+"name": "Arul",
+"photo": "assets/images/arul.jpg"
+}
+{
+"name": "Murali",
+"photo": "assets/images/murali.jpg"
+}
+{
+"name": "Eshwar",
+"photo": "assets/images/eshwar.jpg"
+}
+{
+"name": "Srirankan",
+"photo": "assets/images/sri.jpg"
+}
+{
 "name": "Prasad",
+"photo": "assets/images/prasad.jpg"
+}
+{
+"name": "Nanthan",
 "photo": "assets/images/BTC.jpg"
 }
 ],
