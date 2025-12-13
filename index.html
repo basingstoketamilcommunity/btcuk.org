@@ -48,8 +48,8 @@
   
 <!-- Welcome Section -->
 <section class="py-20 bg-gradient-to-b from-amber-50 to-white">
-  <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-    <img src="https://scontent.fgba1-1.fna.fbcdn.net/v/t39.30808-6/486572751_1813139212813987_1665026829732579743_n.jpg" class="rounded-3xl shadow-xl" alt="BTC Welcome" />
+  <!--<div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <img src="" class="rounded-3xl shadow-xl" alt="BTC Welcome" /> -->
     <div>
       <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Welcome to the Basingstoke Tamil Community</h2>
       
@@ -86,34 +86,6 @@
   </div>
 </section>
 
-
-<!-- Trustees Preview -->
-<section class="py-20 bg-white">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">Our Trustees</h2>
-    <div id="trusteesPreview" class="flex gap-8 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth">
-      
-      <!-- Trustee Card Example -->
-      <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center snap-start hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-        <img src="assets/images/bala.jpg" alt="Trustee Name" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-        <h3 class="text-xl font-bold mb-2">Bala</h3>
-        <p class="text-sm mb-1">Position / Role</p>
-        <p class="text-sm">Secretary</p>
-      </div>
-
-      <!-- Duplicate the above card for each trustee -->
-      <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center snap-start hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-        <img src="assets/images/Arul.jpg" alt="Trustee Name" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-        <h3 class="text-xl font-bold mb-2">Arul</h3>
-        <p class="text-sm mb-1">Position / Role</p>
-        <p class="text-sm">Treasury</p>
-      </div>
-
-      <!-- Add more cards as needed -->
-    </div>
-  </div>
-</section>
-
 <!-- Events Preview -->
 <section class="py-20 bg-amber-100">
   <div class="container mx-auto px-6">
@@ -122,7 +94,85 @@
   </div>
 </section>
 
-<!-- Footer / Contact -->
+<!-- Trustees Preview -->
+<section class="py-20 bg-white relative">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">Our Trustees 2025 - 2026</h2>
+    
+    <!-- Scroll Container -->
+    <div class="relative">
+      <!-- Left Arrow -->
+      <button id="scrollLeft" class="absolute left-0 top-1/2 -translate-y-1/2 bg-red-900 text-amber-100 p-3 rounded-full z-10 hover:bg-red-800">
+        &#8592;
+      </button>
+      <!-- Right Arrow -->
+      <button id="scrollRight" class="absolute right-0 top-1/2 -translate-y-1/2 bg-red-900 text-amber-100 p-3 rounded-full z-10 hover:bg-red-800">
+        &#8594;
+      </button>
+
+      <!-- Trustees Scrollable -->
+      <div id="trusteesPreview" class="flex gap-8 overflow-x-auto pb-4 scroll-smooth">
+        
+        <!-- Trustee Card Example -->
+        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+          <img src="assets/images/bala.jpg" alt="Bala" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
+          <h3 class="text-xl font-bold mb-2">Bala</h3>
+          <p class="text-sm mb-1">Role</p>
+          <p class="text-sm">Secretary</p>
+        </div>
+
+        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+          <img src="assets/images/Arul.jpg" alt="Arul" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
+          <h3 class="text-xl font-bold mb-2">Arul</h3>
+          <p class="text-sm mb-1">Role</p>
+          <p class="text-sm">Treasury</p>
+        </div>
+
+        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+          <img src="assets/images/eshwar.jpg" alt="Eshwar" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
+          <h3 class="text-xl font-bold mb-2">Eshwar</h3>
+          <p class="text-sm mb-1">Role</p>
+          <p class="text-sm">Trustee</p>
+        </div>
+
+        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+          <img src="assets/images/murali.jpg" alt="Murali" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
+          <h3 class="text-xl font-bold mb-2">Murali</h3>
+          <p class="text-sm mb-1">Role</p>
+          <p class="text-sm">Trustee</p>
+        </div>
+
+        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+          <img src="assets/images/thankesh.jpg" alt="Thankesh" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
+          <h3 class="text-xl font-bold mb-2">Thankesh</h3>
+          <p class="text-sm mb-1">Role</p>
+          <p class="text-sm">Vice Secretary</p>
+        </div>
+
+        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+          <img src="assets/images/sri.jpg" alt="Srirankan" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
+          <h3 class="text-xl font-bold mb-2">Srirankan</h3>
+          <p class="text-sm mb-1">Role</p>
+          <p class="text-sm">Trustee</p>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript for Arrows Scroll -->
+<script>
+  const scrollContainer = document.getElementById('trusteesPreview');
+  document.getElementById('scrollLeft').addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  document.getElementById('scrollRight').addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+</script>
+
+  <!-- Footer / Contact -->
 <footer class="bg-red-900 text-amber-100 py-12" id="contact">
   <div class="container mx-auto px-6 text-center">
     <img src="assets/images/BTC.jpg" class="w-20 mx-auto mb-4" alt="BTC Logo" />
