@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basingstoke Tamil Community (BTCUK)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basingstoke Tamil Community (BTC)</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .kolam {
+      background-image: radial-gradient(circle at center, rgba(255,255,255,0.08) 2px, transparent 2px);
+      background-size: 30px 30px;
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-amber-50 text-gray-900">
 
+<!-- Navigation -->
 <header class="bg-white shadow sticky top-0 z-50">
   <div class="container mx-auto px-4 py-4 flex justify-between items-center">
     <div class="flex items-center gap-3">
-      <img src="assets/images/btc-logo.png" class="w-12" />
-      <span class="font-bold">BTCUK</span>
+      <img src="assets/images/btc-logo.png" class="w-12" alt="BTC Logo" />
+      <span class="font-extrabold text-lg text-green-800">BTCUK</span>
     </div>
-    <nav class="space-x-4 hidden md:block">
+    <nav class="space-x-6 hidden md:block font-semibold">
       <a href="index.html">Home</a>
       <a href="events.html">Events</a>
       <a href="trustees.html">Trustees</a>
@@ -24,42 +31,78 @@
   </div>
 </header>
 
-<section class="bg-gradient-to-r from-green-700 to-blue-600 text-white text-center py-24">
-  <h1 class="text-5xl font-bold mb-4">Basingstoke Tamil Community</h1>
-  <p class="text-xl mb-6">Celebrating Tamil culture and unity</p>
-  <a href="events.html" class="bg-white text-green-700 px-6 py-3 rounded font-semibold">View Events</a>
-</section>
-
-<section class="py-16 bg-white">
-  <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-    <img src="https://scontent.fgba1-1.fna.fbcdn.net/v/t39.30808-6/486572751_1813139212813987_1665026829732579743_n.jpg" class="rounded-xl shadow">
-    <div>
-      <h2 class="text-3xl font-bold mb-4">Welcome to BTCUK</h2>
-      <p>Basingstoke Tamil Community brings together Tamil families through cultural events and celebrations.</p>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-r from-red-900 via-orange-800 to-yellow-600 text-white">
+  <div class="absolute inset-0 kolam opacity-30"></div>
+  <div class="relative container mx-auto px-6 py-28 text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-wide mb-6">பாரம்பரியம் • பெருமை • ஒற்றுமை</h1>
+    <p class="text-xl md:text-2xl mb-6">Chera • Chola • Pandya Legacy Lives On</p>
+    <p class="max-w-3xl mx-auto text-lg md:text-xl mb-10">
+      Basingstoke Tamil Community stands proud in celebrating 2000+ years of Tamil civilisation, culture, and unity.
+    </p>
+    <div class="flex justify-center gap-6">
+      <a href="events.html" class="bg-yellow-400 text-black px-8 py-4 rounded-full font-bold hover:bg-yellow-300">Explore Events</a>
+      <a href="forum.html" class="border-2 border-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-black">Join Community</a>
     </div>
   </div>
 </section>
 
-<section class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-6">Our Trustees</h2>
-    <div id="trusteesPreview" class="flex gap-6 overflow-x-auto"></div>
+<!-- Kings Section -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-14">The Great Tamil Dynasties</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="bg-amber-100 rounded-2xl p-8 shadow-lg text-center">
+        <h3 class="text-2xl font-bold mb-3 text-red-800">Chera</h3>
+        <p>Masters of trade, spice routes, and maritime excellence.</p>
+      </div>
+      <div class="bg-amber-100 rounded-2xl p-8 shadow-lg text-center">
+        <h3 class="text-2xl font-bold mb-3 text-red-800">Chola</h3>
+        <p>Builders of temples, administrators of a global empire.</p>
+      </div>
+      <div class="bg-amber-100 rounded-2xl p-8 shadow-lg text-center">
+        <h3 class="text-2xl font-bold mb-3 text-red-800">Pandya</h3>
+        <p>Guardians of Tamil literature, culture, and wisdom.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="py-16 bg-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-6">Upcoming Events</h2>
-    <div id="eventsScroll" class="flex gap-6 overflow-x-auto"></div>
+<!-- Welcome Section -->
+<section class="py-20 bg-gradient-to-b from-amber-50 to-white">
+  <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <img src="https://scontent.fgba1-1.fna.fbcdn.net/v/t39.30808-6/486572751_1813139212813987_1665026829732579743_n.jpg" class="rounded-3xl shadow-xl" alt="BTC Welcome" />
+    <div>
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Welcome to BTCUK</h2>
+      <p class="text-lg mb-4">We are a united Tamil community in Basingstoke celebrating festivals, language, arts, and values.</p>
+      <p class="text-lg">From Pongal to Deepavali, from classical arts to modern conversations, BTCUK keeps Tamil identity alive abroad.</p>
+    </div>
   </div>
 </section>
 
-<footer class="bg-black text-gray-400 py-10" id="contact">
-  <div class="container mx-auto px-4 text-center">
-    <img src="assets/images/btc-logo.png" class="w-20 mx-auto mb-4" />
-    <p>Email: basingstoketamilcommunity@gmail.com</p>
-    <p>Phone: (To be updated)</p>
-    <p class="mt-4">© 2025 BTCUK</p>
+<!-- Trustees Preview -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">Our Trustees</h2>
+    <div id="trusteesPreview" class="flex gap-8 overflow-x-auto pb-4"></div>
+  </div>
+</section>
+
+<!-- Events Preview -->
+<section class="py-20 bg-amber-100">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">Upcoming Events</h2>
+    <div id="eventsScroll" class="flex gap-8 overflow-x-auto pb-4"></div>
+  </div>
+</section>
+
+<!-- Footer / Contact -->
+<footer class="bg-red-900 text-amber-100 py-12" id="contact">
+  <div class="container mx-auto px-6 text-center">
+    <img src="assets/images/btc-logo.png" class="w-20 mx-auto mb-4" alt="BTC Logo" />
+    <p class="mb-2">📧 basingstoketamilcommunity@gmail.com</p>
+    <p class="mb-4">📞 Phone: (To be updated)</p>
+    <p class="text-sm">© 2025 Basingstoke Tamil Community (BTCUK)</p>
   </div>
 </footer>
 
