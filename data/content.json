@@ -2,34 +2,48 @@
 "trustees": [
 {
 "name": "Bala",
+"role": "Secretary",
 "photo": "assets/images/bala.jpg"
 }
 {
 "name": "Thankesh",
+"role": "Vice Secretary",
 "photo": "assets/images/thankesh.jpg"
 }
 {
 "name": "Arul",
+"role": "Treasury",
 "photo": "assets/images/arul.jpg"
 }
 {
 "name": "Murali",
+"role": "Trustee",
 "photo": "assets/images/murali.jpg"
 }
 {
 "name": "Eshwar",
+"role": "Trustee",
 "photo": "assets/images/eshwar.jpg"
 }
 {
 "name": "Srirankan",
+"role": "Trustee",
 "photo": "assets/images/sri.jpg"
 }
 {
+"name": "Nanthan",
+"role": "Vice Treasury",
+"photo": "assets/images/BTC.jpg"
+}
+
+{
 "name": "Prasad",
+"role": "Chairman",
 "photo": "assets/images/prasad.jpg"
 }
 {
-"name": "Nanthan",
+"name": "Nalini",
+"role": "Vice Chairman",
 "photo": "assets/images/BTC.jpg"
 }
 ],
