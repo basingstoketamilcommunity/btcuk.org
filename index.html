@@ -2,78 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Basingstoke Tamil Community (BTCUK)</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-    }
-    header {
-      background: #8e0000;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #333;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-    section {
-      padding: 20px;
-      background: white;
-      margin: 20px;
-      border-radius: 8px;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 font-sans">
 
-<header>
-  <h1>Basingstoke Tamil Community</h1>
-  <p>Connecting Tamil Families in Basingstoke</p>
-</header>
-
-<nav>
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Events</a>
-  <a href="#">Gallery</a>
-  <a href="#">Contact</a>
-</nav>
-
-<section>
-  <h2>Welcome</h2>
-  <p>
-    Basingstoke Tamil Community (BTCUK) is a non-profit community organisation
-    bringing together Tamil families, culture, language, and traditions.
-  </p>
+<!-- Hero Banner -->
+<section class="relative bg-cover bg-center h-screen" style="background-image: url('https://example.com/hero-banner.jpg');">
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white px-4">
+    <img src="https://example.com/btcuk-logo.png" alt="BTCUK Logo" class="w-40 mb-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Basingstoke Tamil Community</h1>
+    <p class="text-lg md:text-2xl mb-6">Connecting Tamil Families in Basingstoke</p>
+    <div class="space-x-4">
+      <a href="#events" class="bg-red-800 hover:bg-red-700 px-6 py-3 rounded-lg font-semibold transition">View Events</a>
+      <a href="#forum" class="bg-yellow-500 hover:bg-yellow-400 px-6 py-3 rounded-lg font-semibold transition">Join Forum</a>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Our Activities</h2>
-  <ul>
-    <li>Cultural Events</li>
-    <li>Tamil Language Classes</li>
-    <li>Community Gatherings</li>
-    <li>Festivals & Celebrations</li>
-  </ul>
+<!-- Welcome Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center md:space-x-12">
+    <div class="md:w-1/2 mb-6 md:mb-0">
+      <img src="https://example.com/community-photo.jpg" alt="Community Photo" class="rounded-lg shadow-lg">
+    </div>
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold mb-4">Welcome to BTCUK</h2>
+      <p class="text-gray-700 text-lg mb-4">
+        Basingstoke Tamil Community is a vibrant non-profit group celebrating Tamil culture, language, and traditions.
+        Join our events, connect with fellow families, and be part of our growing community!
+      </p>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <p>© 2025 Basingstoke Tamil Community | btcuk.org</p>
+<!-- Upcoming Events Scroll -->
+<section id="events" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6 text-center">Upcoming Events</h2>
+    <div class="flex space-x-6 overflow-x-auto pb-4">
+      <!-- Event Card Example -->
+      <div class="flex-none w-64 bg-white rounded-lg shadow-lg hover:scale-105 transform transition">
+        <img src="https://example.com/pongal-banner.jpg" alt="Pongal 2026" class="rounded-t-lg">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Pongal 2026</h3>
+          <p class="text-gray-600 mb-2">14 Jan 2026 | Venue: Basingstoke Community Hall</p>
+          <a href="#" class="block bg-red-800 hover:bg-red-700 text-white text-center py-2 rounded-lg font-semibold transition">Register</a>
+        </div>
+      </div>
+      <!-- Repeat similar cards for other events -->
+      <div class="flex-none w-64 bg-white rounded-lg shadow-lg hover:scale-105 transform transition">
+        <img src="https://example.com/deepavali-banner.jpg" alt="Deepavali" class="rounded-t-lg">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Deepavali 2025</h3>
+          <p class="text-gray-600 mb-2">12 Nov 2025 | Venue: Basingstoke Temple</p>
+          <a href="#" class="block bg-red-800 hover:bg-red-700 text-white text-center py-2 rounded-lg font-semibold transition">Register</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Highlights Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6 text-center">Community Highlights</h2>
+
+    <!-- Event Highlights Scroll -->
+    <h3 class="text-xl font-semibold mb-4">Events</h3>
+    <div class="flex space-x-6 overflow-x-auto pb-4">
+      <!-- Event Card Example -->
+      <div class="flex-none w-48 bg-gray-100 rounded-lg shadow-lg">
+        <img src="https://example.com/event1.jpg" alt="Event Highlight" class="rounded-t-lg">
+        <div class="p-2">
+          <p class="text-gray-700 font-semibold">Deepavali 2024</p>
+        </div>
+      </div>
+      <!-- Add more cards -->
+    </div>
+
+    <!-- Photo Gallery Scroll -->
+    <h3 class="text-xl font-semibold my-4">Photos</h3>
+    <div class="flex space-x-4 overflow-x-auto pb-4">
+      <img src="https://example.com/photo1.jpg" alt="Community Photo" class="flex-none w-48 rounded-lg shadow-lg">
+      <img src="https://example.com/photo2.jpg" alt="Community Photo" class="flex-none w-48 rounded-lg shadow-lg">
+      <img src="https://example.com/photo3.jpg" alt="Community Photo" class="flex-none w-48 rounded-lg shadow-lg">
+    </div>
+
+    <!-- Video Gallery Scroll -->
+    <h3 class="text-xl font-semibold my-4">Videos</h3>
+    <div class="flex space-x-4 overflow-x-auto pb-4">
+      <div class="flex-none w-64 rounded-lg shadow-lg overflow-hidden">
+        <iframe class="w-full h-40" src="https://www.youtube.com/embed/example1" title="Event Video" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="flex-none w-64 rounded-lg shadow-lg overflow-hidden">
+        <iframe class="w-full h-40" src="https://www.youtube.com/embed/example2" title="Event Video" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Forum Teaser -->
+<section id="forum" class="py-16 bg-gray-50 text-center">
+  <h2 class="text-3xl font-bold mb-4">Join the Discussion</h2>
+  <p class="text-gray-700 mb-6">Connect with the BTCUK community. Talk about events, Tamil classes, and community news.</p>
+  <a href="#forum-link" class="bg-red-800 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition">Go to Forum</a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+    <img src="https://example.com/btcuk-logo.png" alt="BTCUK Logo" class="w-32 mb-4 md:mb-0">
+    <div class="space-x-4 mb-4 md:mb-0">
+      <a href="#" class="hover:text-yellow-400">Home</a>
+      <a href="#about" class="hover:text-yellow-400">About</a>
+      <a href="#events" class="hover:text-yellow-400">Events</a>
+      <a href="#highlights" class="hover:text-yellow-400">Highlights</a>
+      <a href="#forum" class="hover:text-yellow-400">Forum</a>
+      <a href="#contact" class="hover:text-yellow-400">Contact</a>
+    </div>
+    <p class="text-gray-400 text-sm">© 2025 Basingstoke Tamil Community | btcuk.org</p>
+  </div>
 </footer>
 
 </body>
