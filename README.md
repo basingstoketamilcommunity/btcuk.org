@@ -58,7 +58,7 @@ All images and videos are hosted in **Google Drive** to keep hosting free and li
 4. Update `data/content.json`
 
 ### Example:
-```json
+json
 {
   "events": [
     {
@@ -79,46 +79,25 @@ This site is hosted using GitHub Pages.
 Steps:
 
 Push code to the main branch
-
 Go to Settings → Pages
-
 Select:
-
 Source: main
-
 Folder: /root
-
 Save
-
-The site will be live at:
-
-https://<username>.github.io/<repository-name>/
-
-
-Custom domain:
-
-https://btcuk.org
 
 🔐 Security & Performance
 
 HTTPS enabled by default
-
 No server-side code
-
 No personal data stored
-
 Fast loading using lightweight assets
 
 🔮 Future Enhancements
 
 Stripe payment integration for events
-
 Firebase-based community forum
-
 Admin dashboard for content updates
-
 Tamil language toggle
-
 Membership registration
 
 🤝 Contributions
@@ -132,4 +111,3 @@ Basingstoke Tamil Community (BTCUK)
 📧 Email: basingstoketamilcommunity@gmail.com
 
 🌐 Website: https://btcuk.org
-
