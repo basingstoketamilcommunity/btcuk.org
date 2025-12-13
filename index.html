@@ -133,70 +133,42 @@
 <div id="eventsScroll" class="flex gap-6 overflow-x-auto"></div>
 </div>
 </section>
-  
-<!-- Trustees Preview -->
+
+<!-- Trustees Preview HTML here -->
 <section class="py-20 bg-white relative">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">Our Trustees 2025 - 2026</h2>
     
-    <!-- Scroll Container -->
     <div class="relative">
-      <!-- Left Arrow -->
-      <button id="scrollLeft" class="absolute left-0 top-1/2 -translate-y-1/2 bg-red-900 text-amber-100 p-3 rounded-full z-10 hover:bg-red-800">
-        &#8592;
-      </button>
-      <!-- Right Arrow -->
-      <button id="scrollRight" class="absolute right-0 top-1/2 -translate-y-1/2 bg-red-900 text-amber-100 p-3 rounded-full z-10 hover:bg-red-800">
-        &#8594;
-      </button>
+      <button id="scrollLeft" class="absolute left-0 top-1/2 -translate-y-1/2 ...">&#8592;</button>
+      <button id="scrollRight" class="absolute right-0 top-1/2 -translate-y-1/2 ...">&#8594;</button>
 
-      <!-- Trustees Scrollable -->
-      <div id="trusteesPreview" class="flex gap-8 overflow-x-auto pb-4 scroll-smooth">
-<!--
-        <!-- Trustee Card Example -->
-        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-          <img src="assets/images/bala.jpg" alt="Bala" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-          <h3 class="text-xl font-bold mb-2">Bala</h3>
-          <p class="text-sm mb-1">Role</p>
-          <p class="text-sm">Secretary</p>
-        </div>
-
-        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-          <img src="assets/images/Arul.jpg" alt="Arul" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-          <h3 class="text-xl font-bold mb-2">Arul</h3>
-          <p class="text-sm">Treasury</p>
-        </div>
-
-        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-          <img src="assets/images/eshwar.jpg" alt="Eshwar" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-          <h3 class="text-xl font-bold mb-2">Eshwar</h3>
-          <p class="text-sm">Trustee</p>
-        </div>
-
-        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-          <img src="assets/images/murali.jpg" alt="Murali" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-          <h3 class="text-xl font-bold mb-2">Murali</h3>
-          <p class="text-sm">Trustee</p>
-        </div>
-
-        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-          <img src="assets/images/thankesh.jpg" alt="Thankesh" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-          <h3 class="text-xl font-bold mb-2">Thankesh</h3>
-          <p class="text-sm">Vice Secretary</p>
-        </div>
-
-        <div class="min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-          <img src="assets/images/sri.jpg" alt="Srirankan" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
-          <h3 class="text-xl font-bold mb-2">Srirankan</h3>
-          <p class="text-sm">Trustee</p>
-        </div> -->        <!-- Add more cards as needed -->
-      </div>
+      <div id="trusteesPreview" class="flex gap-8 overflow-x-auto pb-4 scroll-smooth"></div>
     </div>
   </div>
 </section>
 
-<!-- JavaScript for Arrows Scroll -->
+<!-- Your JavaScript -->
 <script>
+  const trusteesContainer = document.getElementById('trusteesPreview');
+
+  fetch('/data/content.json')
+    .then(response => response.json())
+    .then(data => {
+      const trustees = data.trustees;
+      trustees.forEach(trustee => {
+        const card = document.createElement('div');
+        card.className = "min-w-[250px] bg-amber-100 rounded-2xl p-6 shadow-lg text-center flex-shrink-0 hover:scale-105 hover:shadow-2xl transition-transform duration-300";
+        card.innerHTML = `
+          <img src="${trustee.photo}" alt="${trustee.name}" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" />
+          <h3 class="text-xl font-bold mb-2">${trustee.name}</h3>
+          <p class="text-sm">${trustee.role}</p>
+        `;
+        trusteesContainer.appendChild(card);
+      });
+    })
+    .catch(err => console.error('Error loading trustees JSON:', err));
+
   const scrollContainer = document.getElementById('trusteesPreview');
   document.getElementById('scrollLeft').addEventListener('click', () => {
     scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
