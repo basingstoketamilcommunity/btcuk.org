@@ -1,0 +1,16 @@
+{
+"trustees": [
+{
+"name": "Trustee Name",
+"role": "Chair",
+"photo": "https://drive.google.com/uc?id=PHOTO_ID"
+}
+],
+"events": [
+{
+"title": "Pongal 2026",
+"date": "14 January 2026",
+"poster": "https://drive.google.com/uc?id=FILE_ID"
+}
+]
+}
