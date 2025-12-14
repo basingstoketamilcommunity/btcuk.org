@@ -134,32 +134,42 @@
 </div>
 </section>
 
-<!-- Trustees Preview HTML here -->
+<!-- Trustees Preview Section -->
 <section class="py-20 bg-white relative">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">Our Trustees 2025 - 2026</h2>
     
+    <!-- Scroll Container -->
     <div class="relative">
-      <button id="scrollLeft" class="absolute left-0 top-1/2 -translate-y-1/2 ...">&#8592;</button>
-      <button id="scrollRight" class="absolute right-0 top-1/2 -translate-y-1/2 ...">&#8594;</button>
+      <!-- Left Arrow -->
+      <button id="scrollLeft" class="absolute left-0 top-1/2 -translate-y-1/2 bg-red-900 text-amber-100 p-3 rounded-full z-10 hover:bg-red-800">
+        &#8592;
+      </button>
+      <!-- Right Arrow -->
+      <button id="scrollRight" class="absolute right-0 top-1/2 -translate-y-1/2 bg-red-900 text-amber-100 p-3 rounded-full z-10 hover:bg-red-800">
+        &#8594;
+      </button>
 
+      <!-- Trustees Scrollable -->
       <div id="trusteesPreview" class="flex gap-8 overflow-x-auto pb-4 scroll-smooth"></div>
     </div>
   </div>
 </section>
 
-<!-- Your JavaScript -->
+<!-- Trustees JavaScript -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const trusteesContainer = document.getElementById('trusteesPreview');
 
+  // Fetch JSON and render cards
   fetch('/data/content.json')
     .then(res => res.json())
     .then(data => {
-      data.trustees.forEach(trustee => {
+      const trustees = data.trustees;
+      trustees.forEach(trustee => {
         const card = document.createElement('div');
 
-        // Updated classes with gradient bg, hover scale, shadow, and rounded corners
+        // Gradient, hover, and transition styling
         card.className = `
           min-w-[250px] 
           bg-gradient-to-br from-amber-200 via-amber-100 to-yellow-50 
@@ -178,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
           cursor-pointer
         `;
 
-        // Inner HTML with styled image and text
         card.innerHTML = `
           <img src="${trustee.photo}" alt="${trustee.name}" 
                class="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-4 border-amber-300 shadow-md" />
@@ -192,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Error loading trustees JSON:', err));
 
-  // Scroll arrows functionality
+  // Arrow scroll functionality
   const scrollContainer = document.getElementById('trusteesPreview');
   document.getElementById('scrollLeft').addEventListener('click', () => {
     scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
@@ -202,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
   <!-- Footer / Contact -->
 <footer class="bg-red-900 text-amber-100 py-12" id="contact">
   <div class="container mx-auto px-6 text-center">
