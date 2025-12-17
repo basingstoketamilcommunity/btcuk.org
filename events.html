@@ -6,6 +6,18 @@
   <title>Events – BTC</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<!-- Image Modal -->
+<div
+  id="imageModal"
+  class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50"
+  onclick="closeModal()"
+>
+  <img
+    id="modalImage"
+    class="max-w-[95%] max-h-[95%] rounded-lg shadow-lg"
+    alt="Event Poster"
+  />
+</div>
 <body class="bg-gray-100">
 
 <section class="py-16 bg-white">
