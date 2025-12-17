@@ -16,6 +16,11 @@
       "photo": "assets/images/Arul.jpg"
     },
     {
+      "name": "Shameeque",
+      "role": "Trustee",
+      "photo": "assets/images/BTC.jpg"
+    },
+    {
       "name": "Murali",
       "role": "Trustee",
       "photo": "assets/images/murali.jpg"
@@ -36,9 +41,14 @@
       "photo": "assets/images/BTC.jpg"
     },
     {
+      "name": "Swamy",
+      "role": "Trustee",
+      "photo": "assets/images/BTC.jpg"
+    },
+    {
       "name": "Prasad",
       "role": "Chairman",
-      "photo": "assets/images/prasad.jpg"
+      "photo": "assets/images/prasad.png"
     },
     {
       "name": "Nalini",
@@ -50,7 +60,7 @@
     {
       "title": "Pongal 2026",
       "date": "18 January 2026",
-      "poster": "https://drive.google.com/uc?export=view&id=132zLa34ajwtZivyZCilvbjIxMFSmv3U5"
+      "poster": "https://drive.google.com/file/d/132zLa34ajwtZivyZCilvbjIxMFSmv3U5/view?usp=sharing"
     }
   ]
 }
