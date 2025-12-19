@@ -218,4 +218,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script src="assets/js/data-loader.js"></script>
 </body>
+<!-- Event Image Zoom Modal -->
+<div id="imageModal"
+     class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center">
+
+  <!-- Close -->
+  <button onclick="closeModal()"
+          class="absolute top-6 right-6 text-white text-3xl font-bold">
+    ✕
+  </button>
+
+  <!-- Zoom Controls -->
+  <div class="absolute bottom-6 flex gap-4">
+    <button onclick="zoomOut()" class="bg-white px-4 py-2 rounded text-xl">−</button>
+    <button onclick="zoomIn()" class="bg-white px-4 py-2 rounded text-xl">+</button>
+  </div>
+
+  <!-- Image -->
+  <img id="modalImage"
+       class="max-w-none transition-transform duration-300"
+       alt="Event Poster">
+</div>
+
+<script>
+  let scale = 1;
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+
+  function openModal(src) {
+    scale = 1;
+    modalImage.src = src;
+    modalImage.style.transform = "scale(1)";
+    modal.classList.remove("hidden");
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+  }
+
+  function zoomIn() {
+    scale += 0.2;
+    modalImage.style.transform = `scale(${scale})`;
+  }
+
+  function zoomOut() {
+    scale = Math.max(0.5, scale - 0.2);
+    modalImage.style.transform = `scale(${scale})`;
+  }
+</script>
 </html>
