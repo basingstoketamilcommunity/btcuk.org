@@ -49,11 +49,24 @@ document.addEventListener('DOMContentLoaded', () => {
             hover:shadow-lg 
             transition-shadow duration-300
           `;
-          card.innerHTML = `
-            <img src="${trustee.photo}" class="w-full h-40 object-cover rounded mb-2" alt="${trustee.name}" />
-            <h3 class="font-bold text-lg text-red-800">${trustee.name}</h3>
-            <p class="text-gray-700">${trustee.role}</p>
-          `;
+          const img = document.createElement("img");
+          img.src = event.poster;
+          img.alt = event.title;
+          img.className = "h-40 w-full object-cover rounded mb-2 cursor-zoom-in";
+          img.addEventListener("click", () => openModal(event.poster));
+          
+          card.appendChild(img);
+          
+          const title = document.createElement("h3");
+          title.className = "font-bold";
+          title.textContent = event.title;
+          
+          const date = document.createElement("p");
+          date.textContent = event.date;
+          
+          card.appendChild(title);
+          card.appendChild(date);
+
           tg.appendChild(card);
         });
       }
@@ -92,11 +105,24 @@ document.addEventListener('DOMContentLoaded', () => {
             hover:shadow-lg 
             transition-shadow duration-300
           `;
-          card.innerHTML = `
-            <img src="${event.poster}" class="h-40 w-full object-cover rounded mb-2" alt="${event.title}" />
-            <h3 class="font-bold">${event.title}</h3>
-            <p>${event.date}</p>
-          `;
+          const img = document.createElement("img");
+          img.src = event.poster;
+          img.alt = event.title;
+          img.className = "h-40 w-full object-cover rounded mb-2 cursor-zoom-in";
+          img.addEventListener("click", () => openModal(event.poster));
+          
+          card.appendChild(img);
+          
+          const title = document.createElement("h3");
+          title.className = "font-bold";
+          title.textContent = event.title;
+          
+          const date = document.createElement("p");
+          date.textContent = event.date;
+          
+          card.appendChild(title);
+          card.appendChild(date);
+
           eg.appendChild(card);
         });
       }
