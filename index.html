@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 <!-- Event Image Zoom Modal -->
 <div id="imageModal"
-     class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center">
+     class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center overflow-auto">
 
   <!-- Close -->
   <button onclick="closeModal()"
@@ -236,8 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <!-- Image -->
   <img id="modalImage"
-       class="max-w-none transition-transform duration-300"
-       alt="Event Poster">
+     class="max-w-none max-h-none transition-transform duration-300 origin-center"
+     style="transform-origin: center center;"
+     alt="Event Poster">
 </div>
 
 <script>
@@ -259,15 +260,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function zoomIn() {
     const modalImage = document.getElementById("modalImage");
-    scale += 0.2;
+    scale += 0.25;
     modalImage.style.transform = `scale(${scale})`;
   }
 
   function zoomOut() {
     const modalImage = document.getElementById("modalImage");
-    scale = Math.max(0.5, scale - 0.2);
+    scale = Math.max(0.5, scale - 0.25);
     modalImage.style.transform = `scale(${scale})`;
   }
 </script>
-
 </html>
