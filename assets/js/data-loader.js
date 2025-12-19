@@ -71,63 +71,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      // ===== Events on Scroll or Grid =====
+      /* ===== EVENTS SCROLL ===== */
       const es = document.getElementById('eventsScroll');
       if (es && !es.hasChildNodes()) {
         data.events.forEach(event => {
           const card = document.createElement('div');
-          card.className = `
-            min-w-[250px] 
-            bg-white 
-            p-4 
-            rounded 
-            shadow 
-            flex-shrink-0
-          `;
-          card.innerHTML = `
-            <img src="${event.poster}" class="h-40 w-full object-cover rounded mb-2" alt="${event.title}" />
-            <h3 class="font-bold">${event.title}</h3>
-            <p>${event.date}</p>
-          `;
-          es.appendChild(card);
-        });
-      }
+          card.className = "min-w-[250px] bg-white p-4 rounded shadow";
 
-      const eg = document.getElementById('eventsGrid');
-      if (eg && !eg.hasChildNodes()) {
-        data.events.forEach(event => {
-          const card = document.createElement('div');
-          card.className = `
-            bg-white 
-            p-4 
-            rounded 
-            shadow 
-            hover:shadow-lg 
-            transition-shadow duration-300
-          `;
           const img = document.createElement("img");
           img.src = event.poster;
           img.alt = event.title;
           img.className = "h-40 w-full object-cover rounded mb-2 cursor-zoom-in";
-          img.addEventListener("click", () => openModal(event.poster));
-          
+          img.onclick = () => openModal(event.poster);
+
           card.appendChild(img);
-          
-          const title = document.createElement("h3");
-          title.className = "font-bold";
-          title.textContent = event.title;
-          
-          const date = document.createElement("p");
-          date.textContent = event.date;
-          
-          card.appendChild(title);
-          card.appendChild(date);
+          card.innerHTML += `<h3 class="font-bold">${event.title}</h3>
+                             <p>${event.date}</p>`;
+
+          es.appendChild(card);
+        });
+      }
+
+      /* ===== EVENTS GRID ===== */
+      const eg = document.getElementById('eventsGrid');
+      if (eg && !eg.hasChildNodes()) {
+        data.events.forEach(event => {
+          const card = document.createElement('div');
+          card.className = "bg-white p-4 rounded shadow";
+
+          const img = document.createElement("img");
+          img.src = event.poster;
+          img.alt = event.title;
+          img.className = "h-40 w-full object-cover rounded mb-2 cursor-zoom-in";
+          img.onclick = () => openModal(event.poster);
+
+          card.appendChild(img);
+          card.innerHTML += `<h3 class="font-bold">${event.title}</h3>
+                             <p>${event.date}</p>`;
 
           eg.appendChild(card);
         });
       }
+
     })
-    .catch(err => console.error('Error loading JSON:', err));
+    .catch(err => console.error(err));
+});
 
   // ===== Scroll Arrows for trusteesPreview (if present) =====
   const scrollContainer = document.getElementById('trusteesPreview');
