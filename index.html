@@ -242,10 +242,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script>
   let scale = 1;
-  const modal = document.getElementById("imageModal");
-  const modalImage = document.getElementById("modalImage");
 
   function openModal(src) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+
     scale = 1;
     modalImage.src = src;
     modalImage.style.transform = "scale(1)";
@@ -253,17 +254,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeModal() {
-    modal.classList.add("hidden");
+    document.getElementById("imageModal").classList.add("hidden");
   }
 
   function zoomIn() {
+    const modalImage = document.getElementById("modalImage");
     scale += 0.2;
     modalImage.style.transform = `scale(${scale})`;
   }
 
   function zoomOut() {
+    const modalImage = document.getElementById("modalImage");
     scale = Math.max(0.5, scale - 0.2);
     modalImage.style.transform = `scale(${scale})`;
   }
 </script>
+
 </html>
