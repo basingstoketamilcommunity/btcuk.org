@@ -59,14 +59,26 @@ document.addEventListener('DOMContentLoaded', () => {
           const card = document.createElement('div');
           card.className = "min-w-[250px] bg-white p-4 rounded shadow";
 
-          card.innerHTML = `
-            <img src="${event.poster}"
-                 alt="${event.title}"
-                 class="h-40 w-full object-cover rounded mb-2 cursor-zoom-in"
-                 onclick="openModal('${event.poster}')">
-            <h3 class="font-bold">${event.title}</h3>
-            <p>${event.date}</p>
-          `;
+          const img = document.createElement("img");
+          img.src = event.poster;
+          img.alt = event.title;
+          img.className = "h-40 w-full object-cover rounded mb-2 cursor-zoom-in";
+          img.onclick = () => openModal(event.poster);
+
+          card.appendChild(img);
+
+          // Event details + optional Register button
+          let innerHTML = `<h3 class="font-bold">${event.title}</h3>
+                           <p>${event.date}</p>`;
+          if(event.registration){
+            innerHTML += `
+              <a href="${event.registration}" target="_blank"
+                 class="mt-2 inline-block bg-red-900 text-amber-100 px-4 py-2 rounded hover:bg-red-800">
+                 Register
+              </a>
+            `;
+          }
+          card.innerHTML += innerHTML;
 
           es.appendChild(card);
         });
@@ -87,6 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <h3 class="font-bold">${event.title}</h3>
             <p>${event.date}</p>
           `;
+
+          if(event.registration){
+            card.innerHTML += `
+              <a href="${event.registration}" target="_blank"
+                 class="mt-2 inline-block bg-red-900 text-amber-100 px-4 py-2 rounded hover:bg-red-800">
+                 Register
+              </a>
+            `;
+          }
 
           eg.appendChild(card);
         });
