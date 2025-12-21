@@ -3,30 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events – BTC</title>
+  <title>Events – Basingstoke Tamil Community</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<!-- Image Modal -->
-<div
-  id="imageModal"
-  class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50"
-  onclick="closeModal()"
->
-  <img
-    id="modalImage"
-    class="max-w-[95%] max-h-[95%] rounded-lg shadow-lg"
-    alt="Event Poster"
-  />
-</div>
-<body class="bg-gray-100">
 
-<section class="py-16 bg-white">
-  <div class="container mx-auto px-4">
-    <h1 class="text-4xl font-bold text-center mb-10">Community Events</h1>
-    <div id="eventsGrid" class="grid md:grid-cols-3 gap-8"></div>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- ================= HEADER ================= -->
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/BTC.jpg" class="w-12" alt="BTC Logo">
+        <span class="font-extrabold text-lg text-green-800">BTC UK</span>
+      </div>
+      <nav class="space-x-6 hidden md:block font-semibold">
+        <a href="index.html" class="hover:text-red-700">Home</a>
+        <a href="events.html" class="text-red-700">Events</a>
+        <a href="forum.html" class="hover:text-red-700">Forum</a>
+        <a href="trustees.html" class="hover:text-red-700">Trustees</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= IMAGE MODAL ================= -->
+  <div
+    id="imageModal"
+    class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50"
+  >
+    <button
+      onclick="closeModal()"
+      class="absolute top-6 right-6 text-white text-3xl font-bold"
+    >
+      ✕
+    </button>
+
+    <img
+      id="modalImage"
+      class="max-w-[95%] max-h-[95%] rounded-lg shadow-lg"
+      alt="Event Poster"
+    />
   </div>
-</section>
 
-<script src="assets/js/data-loader.js"></script>
+  <!-- ================= EVENTS GRID ================= -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+
+      <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-red-900">
+        Community Events
+      </h1>
+
+      <div
+        id="eventsGrid"
+        class="grid gap-8 sm:grid-cols-2 md:grid-cols-3"
+      ></div>
+
+    </div>
+  </section>
+
+  <!-- ================= PONGAL REGISTRATION ================= -->
+  <section class="py-20 bg-amber-50">
+    <div class="container mx-auto px-6 max-w-4xl">
+
+      <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-6 text-red-900">
+        Pongal 2026 Registration
+      </h2>
+
+      <p class="text-center text-gray-700 mb-8">
+        Please complete the form below to register for Pongal 2026 celebrations.
+      </p>
+
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-amber-200 bg-white">
+        <iframe
+          src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+          class="w-full h-[1300px] border-0"
+          loading="lazy"
+          allowfullscreen>
+          Loading…
+        </iframe>
+      </div>
+
+      <p class="text-center mt-6 text-sm text-gray-600">
+        Trouble viewing the form?
+        <a
+          href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
+          target="_blank"
+          class="text-red-700 font-semibold underline"
+        >
+          Open it in a new tab
+        </a>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-red-900 text-amber-100 py-12">
+    <div class="container mx-auto px-6 text-center">
+      <img src="assets/images/BTC.jpg" class="w-20 mx-auto mb-4" alt="BTC Logo">
+      <p class="mb-2">📧 basingstoketamilcommunity@gmail.com</p>
+      <p class="text-sm">© 2025 Basingstoke Tamil Community (BTC)</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="assets/js/data-loader.js"></script>
+
+  <!-- Image Modal Script -->
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById("imageModal");
+      const img = document.getElementById("modalImage");
+      img.src = src;
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("imageModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+  </script>
+
 </body>
 </html>
