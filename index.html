@@ -138,10 +138,30 @@
 </footer>
 
 <!-- Image Modal -->
-<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center overflow-auto">
+<!--<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center overflow-auto">
   <button onclick="closeModal()" class="absolute top-6 right-6 text-white text-3xl font-bold">✕</button>
   <img id="modalImage" class="max-w-none max-h-none transition-transform duration-300 origin-center" style="transform-origin: center center;" alt="Event Poster">
-</div>
+</div> -->
+
+  <!-- ================= IMAGE MODAL ================= -->
+  <div
+    id="imageModal"
+    class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50"
+  >
+    <button
+      onclick="closeModal()"
+      class="absolute top-6 right-6 text-white text-3xl font-bold"
+    >
+      ✕
+    </button>
+
+    <img
+      id="modalImage"
+      class="max-w-[95%] max-h-[95%] rounded-lg shadow-lg"
+      alt="Event Poster"
+    />
+  </div>
+
 
 <!-- Scripts -->
 <script src="assets/js/data-loader.js"></script>
