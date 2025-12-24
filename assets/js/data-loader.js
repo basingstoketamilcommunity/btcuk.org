@@ -21,16 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
             transition
           `;
 
-        card.innerHTML = `
-          <div class="h-40 w-full bg-gray-100 flex items-center justify-center rounded mb-2 overflow-hidden">
+          card.innerHTML = `
             <img src="${trustee.photo}"
                  alt="${trustee.name}"
-                 class="max-h-full max-w-full object-contain">
-          </div>
-          <h3 class="font-bold">${trustee.name}</h3>
-          <p class="text-sm">${trustee.role}</p>
-        `;
-
+                 class="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-4 border-amber-300" />
+            <h3 class="text-xl font-bold text-red-800">${trustee.name}</h3>
+            <p class="text-sm text-gray-700">${trustee.role}</p>
+          `;
 
           tp.appendChild(card);
         });
@@ -43,13 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
           const card = document.createElement('div');
           card.className = "bg-white p-4 rounded shadow text-center";
 
-          card.innerHTML = `
+        card.innerHTML = `
+          <div class="h-40 w-full bg-gray-100 flex items-center justify-center rounded mb-2 overflow-hidden">
             <img src="${trustee.photo}"
                  alt="${trustee.name}"
-                 class="h-40 w-full object-cover rounded mb-2">
-            <h3 class="font-bold">${trustee.name}</h3>
-            <p class="text-sm">${trustee.role}</p>
-          `;
+                 class="max-h-full max-w-full object-contain">
+          </div>
+          <h3 class="font-bold">${trustee.name}</h3>
+          <p class="text-sm">${trustee.role}</p>
+        `;
 
           tg.appendChild(card);
         });
