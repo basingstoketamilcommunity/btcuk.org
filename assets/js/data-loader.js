@@ -21,13 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
             transition
           `;
 
-          card.innerHTML = `
+        card.innerHTML = `
+          <div class="h-40 w-full bg-gray-100 flex items-center justify-center rounded mb-2 overflow-hidden">
             <img src="${trustee.photo}"
                  alt="${trustee.name}"
-                 class="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-4 border-amber-300" />
-            <h3 class="text-xl font-bold text-red-800">${trustee.name}</h3>
-            <p class="text-sm text-gray-700">${trustee.role}</p>
-          `;
+                 class="max-h-full max-w-full object-contain">
+          </div>
+          <h3 class="font-bold">${trustee.name}</h3>
+          <p class="text-sm">${trustee.role}</p>
+        `;
+
 
           tp.appendChild(card);
         });
