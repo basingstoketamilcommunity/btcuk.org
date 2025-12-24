@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery – BTC Community</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Page Header -->
+  <section class="py-10 bg-white shadow">
+    <h1 class="text-4xl font-bold text-center text-red-900">
+      Community Gallery
+    </h1>
+    <p class="text-center text-gray-600 mt-2">
+      Moments from our BTC community
+    </p>
+  </section>
+
+  <!-- Gallery Slider -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4">
+
+      <div class="relative overflow-hidden rounded-xl shadow-lg bg-black">
+        <img
+          id="galleryImage"
+          src="assets/images/gallery/1.jpg"
+          alt="Community Photo"
+          class="w-full h-[450px] object-contain bg-black transition-opacity duration-1000 opacity-100"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script>
+    const images = [
+      "assets/images/gallery/1.jpg",
+      "assets/images/gallery/2.jpg",
+      "assets/images/gallery/3.jpg",
+      "assets/images/gallery/4.jpg",
+      "assets/images/gallery/5.jpg"
+    ];
+
+    let currentIndex = 0;
+    const imgElement = document.getElementById("galleryImage");
+
+    setInterval(() => {
+      imgElement.classList.remove("opacity-100");
+      imgElement.classList.add("opacity-0");
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        imgElement.src = images[currentIndex];
+        imgElement.classList.remove("opacity-0");
+        imgElement.classList.add("opacity-100");
+      }, 500);
+    }, 3000); // change image every 3 seconds
+  </script>
+
+</body>
+</html>
