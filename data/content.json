@@ -12,8 +12,13 @@
     },
     {
       "name": "Arul",
-      "role": "Treasury",
+      "role": "Treasurer",
       "photo": "assets/images/Arul.jpg"
+    },
+    {
+      "name": "Nanthan",
+      "role": "Vice Treasurer",
+      "photo": "assets/images/nanthan.png"
     },
     {
       "name": "Shameeque",
@@ -36,11 +41,6 @@
       "photo": "assets/images/sri.jpg"
     },
     {
-      "name": "Nanthan",
-      "role": "Vice Treasury",
-      "photo": "assets/images/nanthan.png"
-    },
-    {
       "name": "Swamy",
       "role": "Trustee",
       "photo": "assets/images/BTC.jpg"
@@ -56,14 +56,14 @@
       "photo": "assets/images/BTC.jpg"
     },
     {
-      "name": "Prasad",
-      "role": "Chairman",
-      "photo": "assets/images/prasad.png"
-    },
-    {
       "name": "Nalini",
       "role": "Vice Chairman",
       "photo": "assets/images/nalini.png"
+    },
+    {
+      "name": "Prasad",
+      "role": "Chairman",
+      "photo": "assets/images/prasad.png"
     }
   ],
   "events": [
