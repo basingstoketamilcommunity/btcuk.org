@@ -9,56 +9,98 @@
 
 <body class="bg-gray-100">
 
-  <!-- Page Header -->
+  <!-- Header -->
   <section class="py-10 bg-white shadow">
     <h1 class="text-4xl font-bold text-center text-red-900">
       Community Gallery
     </h1>
     <p class="text-center text-gray-600 mt-2">
-      Moments from our BTC community
+      Photos & Moments from BTC
     </p>
   </section>
 
-  <!-- Gallery Slider -->
+  <!-- Gallery -->
   <section class="py-12">
     <div class="max-w-5xl mx-auto px-4">
 
-      <div class="relative overflow-hidden rounded-xl shadow-lg bg-black">
+      <div class="relative overflow-hidden rounded-xl shadow-lg bg-black h-[450px] flex items-center justify-center">
+        <!-- Image -->
         <img
           id="galleryImage"
-          src="assets/images/gallery/1.jpg"
-          alt="Community Photo"
-          class="w-full h-[450px] object-contain bg-black transition-opacity duration-1000 opacity-100"
+          class="absolute w-full h-full object-contain transition-opacity duration-1000 opacity-100"
+          hidden
         />
+
+        <!-- Video -->
+        <video
+          id="galleryVideo"
+          class="absolute w-full h-full object-contain transition-opacity duration-1000 opacity-0"
+          muted
+          playsinline
+        ></video>
       </div>
 
     </div>
   </section>
 
-  <!-- JS -->
+  <!-- Script -->
   <script>
-    const images = [
-      "assets/images/gallery/1.jpg",
-      "assets/images/gallery/2.jpg",
-      "assets/images/gallery/3.jpg",
-      "assets/images/gallery/4.jpg",
-      "assets/images/gallery/5.jpg"
+    const media = [
+      { type: "image", src: "assets/images/gallery/1.jpg" },
+      { type: "video", src: "assets/videos/gallery/1.mp4" },
+      { type: "image", src: "assets/images/gallery/2.jpg" },
+      { type: "video", src: "assets/videos/gallery/2.mp4" },
+      { type: "image", src: "assets/images/gallery/3.jpg" }
     ];
 
-    let currentIndex = 0;
-    const imgElement = document.getElementById("galleryImage");
+    let index = 0;
+    const img = document.getElementById("galleryImage");
+    const video = document.getElementById("galleryVideo");
 
-    setInterval(() => {
-      imgElement.classList.remove("opacity-100");
-      imgElement.classList.add("opacity-0");
+    function showMedia(item) {
+      img.hidden = true;
+      video.hidden = true;
+
+      img.classList.remove("opacity-100");
+      video.classList.remove("opacity-100");
+
+      if (item.type === "image") {
+        img.src = item.src;
+        img.hidden = false;
+
+        setTimeout(() => img.classList.add("opacity-100"), 50);
+      } else {
+        video.src = item.src;
+        video.currentTime = 0;
+        video.hidden = false;
+        video.play();
+
+        setTimeout(() => video.classList.add("opacity-100"), 50);
+      }
+    }
+
+    function nextMedia() {
+      const current = media[index];
+      showMedia(current);
+
+      let duration = 3000; // default for images
+
+      if (current.type === "video") {
+        video.onloadedmetadata = () => {
+          duration = Math.min(video.duration * 1000, 10000);
+        };
+      }
 
       setTimeout(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        imgElement.src = images[currentIndex];
-        imgElement.classList.remove("opacity-0");
-        imgElement.classList.add("opacity-100");
-      }, 500);
-    }, 3000); // change image every 3 seconds
+        img.classList.remove("opacity-100");
+        video.classList.remove("opacity-100");
+
+        index = (index + 1) % media.length;
+        setTimeout(nextMedia, 1000);
+      }, duration);
+    }
+
+    nextMedia();
   </script>
 
 </body>
