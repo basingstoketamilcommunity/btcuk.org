@@ -59,68 +59,77 @@
     </div>
   </section>
 
-  <!-- Script -->
   <script>
-    const media = [
-      { type: "image", src: "assets/images/gallery/1.jpg" },
-      { type: "video", src: "assets/videos/gallery/1.mp4" },
-      { type: "image", src: "assets/images/gallery/2.jpg" },
-      { type: "video", src: "assets/videos/gallery/2.mp4" },
-      { type: "image", src: "assets/images/gallery/3.jpg" },
-      { type: "video", src: "assets/videos/gallery/3.mp4" },
-      { type: "image", src: "assets/images/gallery/5.jpg" },
-      { type: "image", src: "assets/images/gallery/6.jpg" }
-    ];
+  const media = [
+    { type: "image", src: "assets/images/gallery/1.jpg" },
+    { type: "video", src: "assets/videos/gallery/1.mp4" },
+    { type: "image", src: "assets/images/gallery/2.jpg" },
+    { type: "video", src: "assets/videos/gallery/2.mp4" },
+    { type: "image", src: "assets/images/gallery/3.jpg" },
+    { type: "video", src: "assets/videos/gallery/3.mp4" },
+    { type: "image", src: "assets/images/gallery/5.jpg" },
+    { type: "image", src: "assets/images/gallery/6.jpg" }
+  ];
 
-    let index = 0;
-    const img = document.getElementById("galleryImage");
-    const video = document.getElementById("galleryVideo");
+  let index = 0;
+  const img = document.getElementById("galleryImage");
+  const video = document.getElementById("galleryVideo");
 
-    function showMedia(item) {
-      img.hidden = true;
-      video.hidden = true;
+  let imageTimer = null;
 
-      img.classList.remove("opacity-100");
-      video.classList.remove("opacity-100");
-
-      if (item.type === "image") {
-        img.src = item.src;
-        img.hidden = false;
-
-        setTimeout(() => img.classList.add("opacity-100"), 50);
-      } else {
-        video.src = item.src;
-        video.currentTime = 0;
-        video.hidden = false;
-        video.play();
-
-        setTimeout(() => video.classList.add("opacity-100"), 50);
-      }
+  function clearTimers() {
+    if (imageTimer) {
+      clearTimeout(imageTimer);
+      imageTimer = null;
     }
+    video.onended = null;
+  }
 
-    function nextMedia() {
-      const current = media[index];
-      showMedia(current);
+  function fadeOutAndNext() {
+    img.classList.remove("opacity-100");
+    video.classList.remove("opacity-100");
 
-      let duration = 3000; // default for images
+    setTimeout(() => {
+      index = (index + 1) % media.length;
+      showCurrentMedia();
+    }, 1000); // fade duration
+  }
 
-      if (current.type === "video") {
-        video.onloadedmetadata = () => {
-          duration = Math.min(video.duration * 1000, 10000);
-        };
-      }
+  function showCurrentMedia() {
+    clearTimers();
 
-      setTimeout(() => {
-        img.classList.remove("opacity-100");
-        video.classList.remove("opacity-100");
+    const item = media[index];
 
-        index = (index + 1) % media.length;
-        setTimeout(nextMedia, 1000);
-      }, duration);
+    img.hidden = true;
+    video.hidden = true;
+
+    img.classList.remove("opacity-100");
+    video.classList.remove("opacity-100");
+
+    if (item.type === "image") {
+      img.src = item.src;
+      img.hidden = false;
+
+      setTimeout(() => img.classList.add("opacity-100"), 50);
+
+      // Show image for 3 seconds
+      imageTimer = setTimeout(fadeOutAndNext, 3000);
+    } else {
+      video.src = item.src;
+      video.currentTime = 0;
+      video.hidden = false;
+      video.play();
+
+      setTimeout(() => video.classList.add("opacity-100"), 50);
+
+      // Move to next only when video fully ends
+      video.onended = fadeOutAndNext;
     }
+  }
 
-    nextMedia();
-  </script>
+  // Start gallery
+  showCurrentMedia();
+</script>
 
 </body>
 </html>
