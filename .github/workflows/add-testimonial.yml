@@ -1,0 +1,38 @@
+name: Add Testimonial to Pending List
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  process-testimonial:
+    if: contains(github.event.issue.title, '[TESTIMONIAL]')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Extract testimonial from issue body
+        run: |
+          echo '${{ github.event.issue.body }}' > new.txt
+
+      - name: Convert to JSON entry
+        run: |
+          NAME=$(grep "Name:" new.txt | sed 's/Name: //')
+          MESSAGE=$(grep "Message:" new.txt | sed 's/Message: //')
+          DATE=$(date +%Y-%m-%d)
+
+          jq --arg name "$NAME" \
+             --arg message "$MESSAGE" \
+             --arg date "$DATE" \
+             '. += [{"name":$name,"message":$message,"photo":"","date":$date}]' \
+             data/pending-testimonials.json > tmp.json && mv tmp.json data/pending-testimonials.json
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/pending-testimonials.json
+          git commit -m "New testimonial added to pending"
+          git push
