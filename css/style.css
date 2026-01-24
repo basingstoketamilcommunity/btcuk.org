@@ -77,3 +77,44 @@
   text-align: center;
   margin-top: 8px;
 }
+/* ===== Modal Form Layout Fix ===== */
+#testimonialModal {
+  z-index: 9999;
+}
+
+#testimonialModal .modal-content {
+  text-align: left;
+}
+
+#testimonialForm {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px;
+}
+
+#testimonialForm label {
+  display: block !important;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+#testimonialForm input,
+#testimonialForm textarea {
+  display: block !important;
+  width: 100% !important;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#testimonialForm textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+#testimonialForm button {
+  align-self: flex-start;
+  margin-top: 10px;
+}
