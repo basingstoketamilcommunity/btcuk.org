@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "name": "Test User",
+    "message": "This is a test testimonial.",
+    "photo": "",
+    "date": "2026-01-24"
+  }
+]
