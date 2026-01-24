@@ -1,10 +1,19 @@
+/* ===== Testimonials Section ===== */
 .testimonials { background: #f9f6f6; padding: 60px 20px; text-align: center; }
 .testimonials.hidden { display: none; }
 
 .testimonials-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
 
-.btn-primary { background: #7a0019; color: #fff; padding: 10px 18px; border: none; border-radius: 6px; cursor: pointer; }
+.btn-primary {
+  background: #7a0019;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
+/* Carousel */
 .carousel { position: relative; overflow: hidden; margin-top: 30px; }
 .carousel-track { display: flex; transition: transform 0.6s ease-in-out; }
 
@@ -16,8 +25,10 @@
 .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: #7a0019; color: white; border: none; padding: 8px 12px; cursor: pointer; }
 .prev { left: 10px; } .next { right: 10px; }
 
+/* Modal */
 .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; }
 .modal.hidden { display: none; }
-.modal-content { background: white; padding: 25px; border-radius: 10px; width: 95%; max-width: 500px; }
+.modal-content { background: white; padding: 25px; border-radius: 10px; width: 95%; max-width: 500px; text-align: left; }
 
+/* Honeypot */
 .honeypot { display: none; }
