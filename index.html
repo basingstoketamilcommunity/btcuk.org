@@ -189,5 +189,40 @@
   function zoomOut(){ document.getElementById("modalImage").style.transform = `scale(${scale=Math.max(0.5,scale-0.25)})`; }
 </script>
 
+<section id="testimonials-section" class="testimonials hidden">
+  <div class="container">
+    <div class="testimonials-header">
+      <h2>Community Voices</h2>
+      <button id="openTestimonialForm" class="btn-primary">Share Your Experience</button>
+    </div>
+
+    <div class="carousel">
+      <button class="carousel-btn prev">&#10094;</button>
+      <div class="carousel-track" id="testimonialTrack"></div>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<div id="testimonialModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Share Your Experience</h3>
+
+    <form id="testimonialForm">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email (private)" required />
+      <textarea name="message" placeholder="Your experience with BTCUK..." required></textarea>
+      <input type="file" name="photo" accept="image/*" />
+      <input type="text" name="website" class="honeypot" />
+      <button type="submit" class="btn-primary">Submit Testimonial</button>
+      <p id="formStatus"></p>
+    </form>
+  </div>
+</div>
+
+<script src="/js/testimonials.js"></script>
+
+
 </body>
 </html>
