@@ -150,3 +150,6 @@
 .btn-primary:hover {
   background-color: #2563eb;
 }
+.honeypot {
+  display: none; /* completely hides the field */
+}
