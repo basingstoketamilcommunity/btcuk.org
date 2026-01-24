@@ -55,7 +55,7 @@ document.getElementById("testimonialForm").addEventListener("submit", async e =>
 
   const formData = new FormData(form);
 
-  const res = await fetch("https://YOUR_NETLIFY_SITE.netlify.app/.netlify/functions/submitTestimonial", {
+  const res = await fetch("https://btcuk.netlify.app/.netlify/functions/submitTestimonial", {
     method: "POST",
     body: formData
   });
