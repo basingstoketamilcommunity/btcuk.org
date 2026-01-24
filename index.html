@@ -128,7 +128,7 @@
 
 <!-- Trustees Preview Section -->
 <section class="py-20 bg-white relative">
-  <div class="container mx-auto px-6">
+  <div class="container mx-auto px-6 py-12">
     <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">Our Trustees 2025 - 2026</h2>
     <div class="relative">
       <button id="scrollLeft" class="absolute left-0 top-1/2 -translate-y-1/2 bg-red-900 text-amber-100 p-3 rounded-full z-10 hover:bg-red-800">&#8592;</button>
@@ -138,19 +138,20 @@
   </div>
 </section>
 
-<section id="testimonials-section" class="testimonials hidden">
-  <div class="container">
+<section id="testimonials-section" class="testimonials-section">
+  <div class="container mx-auto px-6 py-12">
     <div class="testimonials-header">
       <h2>Community Voices</h2>
       <button id="openTestimonialForm" class="btn-primary">Share Your Experience</button>
     </div>
 
     <!-- Carousel -->
-    <div class="carousel">
-      <button class="carousel-btn prev">&#10094;</button>
-      <div class="carousel-track" id="testimonialTrack"></div>
-      <button class="carousel-btn next">&#10095;</button>
-    </div>
+  <div class="testimonial-carousel">
+    <button class="carousel-btn prev">&#10094;</button>
+    <div class="testimonial-track" id="testimonialTrack"></div>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+
   </div>
 </section>
 
@@ -161,9 +162,9 @@
     <h3>Share Your Experience</h3>
 
     <!-- Formspree Testimonial Form -->
-    <form id="testimonialForm" action="https://formspree.io/f/xzdewgyp" method="POST" enctype="multipart/form-data">
-      
-      <!-- Name (public) -->
+    <form id="testimonialForm" class="testimonial-form" action="https://formspree.io/f/xzdewgyp" method="POST">
+    
+    <!-- Name (public) -->
       <label for="name">Your Name *</label>
       <input type="text" id="name" name="name" placeholder="Your Name" required />
 
