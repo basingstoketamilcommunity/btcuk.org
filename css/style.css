@@ -13,6 +13,7 @@
   margin-bottom: 30px;
 }
 
+
 /* Carousel wrapper */
 .testimonial-carousel {
   position: relative;
@@ -28,6 +29,15 @@
   transition: transform 0.5s ease-in-out;
 }
 
+.carousel-slide {
+    flex: 0 0 300px; 
+    min-width: 300px;
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: justify; /* <-- Justified text */
+  }
 /* Each testimonial card */
 .testimonial-card {
   min-width: 100%;
