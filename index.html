@@ -207,7 +207,7 @@
 
     // Map only Name and Testimonial / Experience (ignore Timestamp)
     const testimonials = rows.map(row => ({
-      name: row.c[0] ? row.c[0].v : "Anonymous",      // Name column
+      name: row.c[1] ? row.c[1].v : "Anonymous",      // Name column
       message: row.c[2] ? row.c[2].v : ""             // Testimonial column (adjust index if needed)
     }));
 
