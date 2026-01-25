@@ -193,48 +193,50 @@
 
   // --- Load Testimonials from Google Sheet ---
   async function loadTestimonials() {
-    const SHEET_ID = "18A591iDNufW0NdlIeZeEFMpcmFmpDSP5PBKRNn0wgVk";
-    const SHEET_NAME = "BTC_Testimonial_Form_Response";
-    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
+  const SHEET_ID = "18A591iDNufW0NdlIeZeEFMpcmFmpDSP5PBKRNn0wgVk";
+  const SHEET_NAME = "BTC_Testimonial_Form_Response";
+  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
 
-    try {
-      const res = await fetch(url);
-      let text = await res.text();
+  try {
+    const res = await fetch(url);
+    let text = await res.text();
 
-      const json = JSON.parse(text.substring(47, text.length - 2));
-      const rows = json.table.rows;
+    // Parse JSON (remove Google wrapper)
+    const json = JSON.parse(text.substring(47, text.length - 2));
+    const rows = json.table.rows;
 
-      const testimonials = rows.map(row => ({
-        name: row.c[0] ? row.c[0].v : "Anonymous",
-        message: row.c[1] ? row.c[1].v : ""
-      }));
+    // Map only Name and Testimonial / Experience (ignore Timestamp)
+    const testimonials = rows.map(row => ({
+      name: row.c[0] ? row.c[0].v : "Anonymous",      // Name column
+      message: row.c[2] ? row.c[2].v : ""             // Testimonial column (adjust index if needed)
+    }));
 
-      const container = document.getElementById("testimonial-carousel");
-      container.innerHTML = "";
+    const container = document.getElementById("testimonial-carousel");
+    container.innerHTML = "";
 
-      testimonials.forEach(t => {
-        const slide = document.createElement("div");
-        slide.className = "carousel-slide";
-        slide.innerHTML = `<p>${t.message}</p><p class="font-bold mt-2">— ${t.name}</p>`;
-        container.appendChild(slide);
-      });
+    testimonials.forEach(t => {
+      const slide = document.createElement("div");
+      slide.className = "carousel-slide";
+      slide.innerHTML = `<p>${t.message}</p><p class="font-bold mt-2">— ${t.name}</p>`;
+      container.appendChild(slide);
+    });
 
-      // --- Automatic horizontal scroll (infinite loop) ---
-      let scrollAmount = 0;
-      const scrollStep = 1; // px per frame
-      function autoScroll() {
-        scrollAmount += scrollStep;
-        if(scrollAmount >= container.scrollWidth - container.clientWidth) scrollAmount = 0;
-        container.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-        requestAnimationFrame(autoScroll);
-      }
+    // Automatic horizontal scroll
+    let scrollAmount = 0;
+    const scrollStep = 1;
+    function autoScroll() {
+      scrollAmount += scrollStep;
+      if (scrollAmount >= container.scrollWidth - container.clientWidth) scrollAmount = 0;
+      container.scrollTo({ left: scrollAmount, behavior: 'smooth' });
       requestAnimationFrame(autoScroll);
-
-    } catch (err) {
-      console.error("Error loading testimonials:", err);
     }
-  }
+    requestAnimationFrame(autoScroll);
 
+  } catch (err) {
+    console.error("Error loading testimonials:", err);
+  }
+}
+  
   // Load testimonials on page load
   window.addEventListener("DOMContentLoaded", loadTestimonials);
 </script>
