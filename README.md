@@ -1,113 +1,37 @@
-# Basingstoke Tamil Community (BTCUK) – Official Website
+# Basingstoke Tamil Community (BTCUK) – Website redesign
 
-This repository contains the source code for the **Basingstoke Tamil Community (BTCUK)** official website.
+This branch contains the **2026 BTC website redesign preview**. It is intentionally separate from `main` so the live website remains unchanged while the community reviews the new design.
 
-The website is designed to be:
-- Fully responsive (mobile, tablet, desktop)
-- Free to host (GitHub Pages)
-- Easy to maintain by community volunteers
-- Dynamically driven using Google Drive for media content
+Preview deployment uses **GitHub Pages via GitHub Actions**.
 
-🌐 **Live Website:** https://btcuk.org
+The redesign focuses on:
+- Community-first navigation and messaging
+- Strong event discovery and registration calls-to-action
+- Responsive mobile/tablet/desktop layouts
+- Improved accessibility and SEO foundations
+- Reusable content-driven event and people cards
+- Existing BTC registration forms and approved community assets
 
----
+The live site remains on `main` until the redesign is reviewed and explicitly approved.
 
-## 📌 Features
+## Preview deployment
 
-- Modern, responsive design
-- Community-focused layout
-- Events listing (Pongal, Deepavali, Tamil New Year, etc.)
-- Event registration-ready architecture
-- Trustees & committee members listing
-- Discussion forum (planned)
-- Dynamic loading of:
-  - Event posters
-  - Photos
-  - Videos
-- Free HTTPS (Let’s Encrypt via GitHub Pages)
+The workflow is `.github/workflows/preview.yml` and deploys the `redesign-2026` branch to GitHub Pages.
 
----
+GitHub Pages settings should use:
 
-## 🏗️ Project Structure
-/
-├── index.html # Homepage
-├── events.html # Events listing
-├── trustees.html # Trustees & committee
-├── forum.html # Community forum (placeholder)
-│
-├── assets/
-│ ├── js/
-│ │ └── data-loader.js # Dynamic content loader
-│ └── images/
-│ └── btc-logo.png # BTCUK logo
-│
-└── data/
-└── content.json # Google Drive-based content mapping
+**Settings → Pages → Build and deployment → Source: GitHub Actions**
 
+## Review process
 
----
+1. Open the pull request for the redesign.
+2. Wait for the GitHub Pages deployment to complete.
+3. Open the generated Pages URL from the workflow/deployment environment.
+4. Review on desktop and mobile.
+5. Request changes on the PR as needed.
+6. Merge only after BTC approval.
 
-## 🗂️ Dynamic Content Management (Google Drive)
+## Contact
 
-All images and videos are hosted in **Google Drive** to keep hosting free and lightweight.
-
-### How it works:
-1. Upload posters, photos, or videos to Google Drive
-2. Make files public (Anyone with link)
-3. Copy the file ID
-4. Update `data/content.json`
-
-### Example:
-json
-{
-  "events": [
-    {
-      "title": "Pongal 2026",
-      "date": "14 January 2026",
-      "poster": "https://drive.google.com/uc?id=FILE_ID"
-    }
-  ]
-}
-
-
-No coding knowledge required for updates.
-
-🚀 Deployment
-
-This site is hosted using GitHub Pages.
-
-Steps:
-
-Push code to the main branch
-Go to Settings → Pages
-Select:
-Source: main
-Folder: /root
-Save
-
-🔐 Security & Performance
-
-HTTPS enabled by default
-No server-side code
-No personal data stored
-Fast loading using lightweight assets
-
-🔮 Future Enhancements
-
-Stripe payment integration for events
-Firebase-based community forum
-Admin dashboard for content updates
-Tamil language toggle
-Membership registration
-
-🤝 Contributions
-
-This is a community project.
-Suggestions, improvements, and contributions are welcome via pull requests.
-
-📧 Contact
-
-Basingstoke Tamil Community (BTCUK)
-📧 Email: basingstoketamilcommunity@gmail.com
-
-🌐 Website: https://btcuk.org
+Basingstoke Tamil Community (BTCUK)  
+Email: basingstoketamilcommunity@gmail.com
